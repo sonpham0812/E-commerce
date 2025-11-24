@@ -35,4 +35,4 @@ export const fetchCategoryList = createAsyncThunk("category/all", async () => {
 });
 
 export const getCategoryList = (state) => state.category.categoryList;
-export default categorySlice.reducers;
+export default categorySlice.reducer;

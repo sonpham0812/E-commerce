@@ -1,116 +1,13 @@
-// Khai báo biến (tùy chọn)
-$shopee-orange: #ee4d2d;
-$text-color: rgba(255, 255, 255, 0.9);
-$link-hover-color: rgba(255, 255, 255, 1);
-$divider-color: rgba(255, 255, 255, 0.4);
-
-.header-top {
-  background-color: $shopee-orange;
-  height: 34px; // Chiều cao cố định thường thấy
+.header {
+  position: sticky;
+  top: 0;
+  padding-right: 72px;
+  padding-left: 72px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 120px; // Padding hai bên, có thể điều chỉnh
-  font-size: 13px; // Kích thước chữ tiêu chuẩn
+  flex-direction: column;
+  gap: 12px;
 }
 
-// --- Phần bên trái ---
-.header-top__left {
-  display: flex;
-  align-items: center;
-  gap: 8px; // Khoảng cách giữa các mục (tùy chọn)
-}
-
-.header-top__link {
-  color: $text-color;
-  text-decoration: none;
-  padding: 0 8px; // Padding cho khu vực click
-  position: relative;
-  
-  &:hover {
-    color: $link-hover-color;
-  }
-
-  // Đường gạch đứng phân cách
-  &:not(:last-child)::after {
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 12px;
-    background-color: $divider-color;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  // Ngoại lệ: không thêm gạch đứng cho link "Tải Ứng Dụng"
-  .header-top__link:nth-child(3)::after {
-      display: none;
-  }
-}
-
-.header-top__text-group {
-    color: $text-color;
-    padding-left: 10px; // Khoảng cách sau gạch đứng
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.header-top__social-icon {
-    color: $text-color;
-    font-size: 16px; // Kích thước icon
-    margin-left: 4px;
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
-
-// --- Phần bên phải ---
-.header-top__right {
-  display: flex;
-  align-items: center;
-  gap: 16px; // Khoảng cách giữa các mục hành động
-}
-
-.header-top__action-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: $text-color;
-  text-decoration: none;
-  
-  &:hover {
-    color: $link-hover-color;
-  }
-  
-  .fa-bell, .fa-circle-question {
-    font-size: 15px;
-  }
-}
-
-// Xử lý riêng cho Đăng Ký và Đăng Nhập
-.header-top__link--register {
-    // Không cần gạch đứng
-    padding: 0 8px;
-}
-
-.header-top__link--login {
-    // Tạo gạch đứng ở phía trước bằng cách dùng ::before
-    position: relative;
-    padding-left: 10px;
-    
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 1px;
-      height: 12px;
-      background-color: $divider-color;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+.search-categories {
+  width: 80%;
 }
