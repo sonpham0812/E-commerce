@@ -1,0 +1,128 @@
+/* src/Home/HomePage.scss */
+.home-page {
+  .home-banner {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+    }
+    margin-bottom: 28px;
+  }
+
+  .category-grid {
+    padding: 12px 20px;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 16px;
+      justify-items: center;
+      align-items: start;
+      width: 100%;
+      margin-bottom: 28px;
+    }
+
+    .category-card {
+      width: 140px;
+      text-align: center;
+      cursor: pointer;
+
+      .cat-image {
+        width: 140px;
+        height: 90px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 8px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .cat-name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .featured {
+    padding: 12px 20px;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .featured-block {
+      margin-bottom: 26px;
+
+      .featured-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        h3 {
+          font-size: 18px;
+          margin: 0;
+        }
+
+        button {
+          background: #f85606;
+          color: #fff;
+          border: none;
+          padding: 6px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+
+      .featured-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+
+        .featured-item {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  /* responsive */
+  @media (max-width: 1200px) {
+    .category-grid .grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    .featured .featured-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .category-grid .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .featured .featured-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .home-banner img {
+      height: 180px;
+    }
+  }
+}

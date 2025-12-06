@@ -8,7 +8,11 @@ import {
 
 export default function HeaderTop() {
   return (
-    <Flex justify="space-between" align="center">
+    <Flex
+      justify="space-between"
+      align="center"
+      style={{ padding: "10px 20px" }}
+    >
       <Flex gap="middle">
         <Link to="/">Seller Center</Link>
         <Link to="/">Download</Link>
@@ -22,6 +26,7 @@ export default function HeaderTop() {
           </a>
         </Flex>
       </Flex>
+
       <Flex gap="middle">
         <Flex gap="4px" align="center">
           <a href="/">

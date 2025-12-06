@@ -1,19 +1,30 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import "./App.css";
-import HeaderTop from "./components/Header/HeaderTop";
 import { Provider } from "react-redux";
 import store from "./store/store";
 
+import "./App.scss";
+import Header from "./components/Header";
+import ProductList from "./components/ProductList/ProductList";
+import CartPage from "./components/CartPage/CartPage";
+import ProductDetail from "./components/ProductDetail/ProductDetail.jsx";
+import SearchResult from "./SearchResult/SearchResult";
+import HomePage from "./Home/HomePage.jsx";
+
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <BrowserRouter>
-          <HeaderTop />
-        </BrowserRouter>
-      </Provider>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<ProductList />} /> */}
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/search/:keyword" element={<SearchResult />} />
+          <Route path="/:category" element={<ProductList />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
