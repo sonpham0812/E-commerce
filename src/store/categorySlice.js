@@ -24,6 +24,26 @@ const categorySlice = createSlice({
       })
       .addCase(fetchCategoryList.rejected, (state, _) => {
         state.categoriesStatus = STATUS.FAILED;
+      })
+      .addCase(fetchProductsByCategory.pending, (state, _) => {
+        state.productsStatus = STATUS.LOADING;
+      })
+      .addCase(fetchProductsByCategory.fulfilled, (state, action) => {
+        state.categoryProducts = action.payload;
+        state.productsStatus = STATUS.SUCCEEDED;
+      })
+      .addCase(fetchProductsByCategory.rejected, (state, _) => {
+        state.productsStatus = STATUS.FAILED;
+      })
+      .addCase(fetchLimitProduct.pending, (state, _) => {
+        state.productsStatus = STATUS.LOADING;
+      })
+      .addCase(fetchLimitProduct.fulfilled, (state, action) => {
+        state.categoryProducts = action.payload;
+        state.productsStatus = STATUS.SUCCEEDED;
+      })
+      .addCase(fetchLimitProduct.rejected, (state, _) => {
+        state.productsStatus = STATUS.FAILED;
       });
   },
 });
@@ -34,5 +54,26 @@ export const fetchCategoryList = createAsyncThunk("category/all", async () => {
   return categoryList;
 });
 
+export const fetchProductsByCategory = createAsyncThunk(
+  "category/products",
+  async (category) => {
+    const res = await fetch(`${BASE_URL}/products/category/${category}`);
+    const products = await res.json();
+    return products;
+  }
+);
+
+export const fetchLimitProduct = createAsyncThunk(
+  "category/product/limit",
+  async ({ category, limit }) => {
+    const res = await fetch(
+      `${BASE_URL}/products/category/${category}?limit=${limit}`
+    );
+    const products = await res.json();
+    return products;
+  }
+);
+
 export const getCategoryList = (state) => state.category.categoryList;
+export const getProductsList = (state) => state.category.categoryProducts;
 export default categorySlice.reducer;

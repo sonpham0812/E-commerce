@@ -15,7 +15,7 @@ const CategoryList = () => {
   const navigate = useNavigate();
 
   const onClick = ({ key }) => {
-    navigate(`/category/${key}`);
+    navigate(`/${key}`);
   };
 
   useEffect(() => {
