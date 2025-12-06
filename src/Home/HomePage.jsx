@@ -64,12 +64,12 @@ const HomePage = () => {
     <div className="home-page">
       {/* Banner */}
       <section className="home-banner">
+        Banner conflict 1
         <img
           src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop"
           alt="banner"
         />
       </section>
-
       {/* Category Grid */}
       <section className="category-grid">
         <h2>Danh mục nổi bật</h2>
@@ -98,8 +98,8 @@ const HomePage = () => {
           })}
         </div>
       </section>
-
       {/* Featured products by category */}
+      Highligh products conflict 2
       <section className="featured">
         <h2>Sản phẩm nổi bật</h2>
 
