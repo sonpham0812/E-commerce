@@ -41,10 +41,19 @@
   }
 }
 
+/* ⭐⭐⭐ GIẢI QUYẾT VẤN ĐỀ: GIỮ TITLE 2 DÒNG CHIỀU CAO CỐ ĐỊNH ⭐⭐⭐ */
 .title {
   font-size: 15px;
   font-weight: 600;
   margin-top: 4px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+
+  height: 42px;
 }
 
 .price {

@@ -36,6 +36,17 @@ const CartPage = () => {
       dataIndex: "name",
     },
     {
+      title: "Image",
+      dataIndex: "image",
+      render: (image, record) => (
+        <img
+          src={image}
+          alt={`${record.name}`}
+          style={{ height: 50, objectFit: "cover" }}
+        />
+      ),
+    },
+    {
       title: "Unit Price",
       dataIndex: "price",
       render: (price) => `$${price.toFixed(2)}`,

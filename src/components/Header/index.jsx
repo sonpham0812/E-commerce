@@ -47,7 +47,7 @@ const Header = () => {
             onSearch={onSearch} // <--- dùng hàm trên
           />
 
-          {/* <Flex justify="space-between">
+          <Flex justify="space-between">
             {categories?.slice(0, 10)?.map((item) => (
               <Button
                 key={item.name}
@@ -58,7 +58,7 @@ const Header = () => {
                 {item.name}
               </Button>
             ))}
-          </Flex> */}
+          </Flex>
         </div>
 
         <CartIcon />

@@ -22,43 +22,30 @@
   }
 
   .ant-row {
-    justify-content: space-between !important;
+    /* Căn giữa các sản phẩm */
+    justify-content: center !important;
+
+    /* Khoảng cách đều 2 bên card */
+    column-gap: 24px !important;
+    row-gap: 24px !important;
+
     .ant-col > * {
-      height: 100%;
       display: flex;
       flex-direction: column;
-    }
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
-    }
-  }
-
-  // Nếu muốn căn giữa các sản phẩm
-  &.center {
-    .ant-row {
-      justify-content: center;
+      height: auto;
     }
   }
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 992px) {
   .product-list {
     padding: 20px;
-
-    h1 {
-      font-size: 26px;
-    }
   }
 }
 
 @media (max-width: 576px) {
   .product-list {
     padding: 10px;
-
-    h1 {
-      font-size: 22px;
-    }
   }
 }
