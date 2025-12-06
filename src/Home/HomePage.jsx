@@ -65,7 +65,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      {/* Banner */}
+      Test conflict 1{/* Banner */}
       <section className="home-banner">
         <img
           src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop"
@@ -101,6 +101,7 @@ const HomePage = () => {
         </div>
       </section>
       {/* Featured products by category */}
+      Test conflict 2
       <section className="featured">
         <h2>Sản phẩm nổi bật</h2>
 
