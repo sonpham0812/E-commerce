@@ -4,6 +4,7 @@ import store from "./store/store";
 
 import "./App.scss";
 import Header from "./components/Header";
+import Footer from "./components/Footer/Footer.jsx";
 import ProductList from "./components/ProductList/ProductList";
 import CartPage from "./components/CartPage/CartPage";
 import ProductDetail from "./components/ProductDetail/ProductDetail.jsx";
@@ -17,12 +18,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/" element={<ProductList />} /> */}
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/search/:keyword" element={<SearchResult />} />
           <Route path="/:category" element={<ProductList />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </Provider>
   );

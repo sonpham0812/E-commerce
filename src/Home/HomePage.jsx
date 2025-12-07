@@ -29,7 +29,7 @@ const HomePage = () => {
   useEffect(() => {
     if (!categories || categories.length === 0) return;
 
-    const toFetch = categories.slice(0, 5); // lấy 5 category đầu
+    const toFetch = categories.slice(0, 6); // lấy 6 category đầu
 
     toFetch.forEach((cat) => {
       const slug = cat.slug || cat;
@@ -104,7 +104,7 @@ const HomePage = () => {
       <section className="featured">
         <h2>Sản phẩm nổi bật</h2>
 
-        {categories?.slice(0, 5)?.map((c) => {
+        {categories?.slice(0, 6)?.map((c) => {
           const name = c.name || c;
           const slug = c.slug || c;
           const products = categoryProducts[slug] || [];
