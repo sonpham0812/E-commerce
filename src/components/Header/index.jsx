@@ -17,7 +17,6 @@ const Header = () => {
     dispatch(fetchCategoryList());
   }, [dispatch]);
 
-  // sửa lại onSearch để nhảy trang tìm kiếm
   const onSearch = (value) => {
     if (value.trim() !== "") {
       navigate(`/search/${value}`);
@@ -32,9 +31,16 @@ const Header = () => {
     <div className="header py-m bg-main">
       <HeaderTop />
       <Flex justify="space-between" align="center">
-        <Flex gap={2}>
+        <Flex gap={2} align="center">
           <CategoryList />
-          <div>TempLogo</div>
+
+          {/* ------ LOGO ------ */}
+          <img
+            src="/LogoMyBrand.png"
+            alt="brand logo"
+            className="header-logo"
+            onClick={() => navigate("/")}
+          />
         </Flex>
 
         {/* Search */}
@@ -44,7 +50,7 @@ const Header = () => {
             allowClear
             enterButton="Search"
             size="large"
-            onSearch={onSearch} // <--- dùng hàm trên
+            onSearch={onSearch}
           />
 
           <Flex justify="space-between">
