@@ -58,7 +58,6 @@ const HomePage = () => {
     });
   }, [categories, dispatch]);
 
-  const onClickCategory = (slug) => navigate(`/${slug}`);
   const onClickViewAll = (slug) => navigate(`/${slug}`);
 
   console.log(categoryProducts);
@@ -71,34 +70,6 @@ const HomePage = () => {
           src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop"
           alt="banner"
         />
-      </section>
-      {/* Category Grid */}
-      <section className="category-grid">
-        <h2>Danh mục nổi bật</h2>
-        <div className="grid">
-          {categories?.slice(0, 8)?.map((c) => {
-            const name = c.name || c;
-            const slug = c.slug || c;
-
-            return (
-              <div
-                key={slug}
-                className="category-card"
-                onClick={() => onClickCategory(slug)}
-              >
-                <div className="cat-image">
-                  <img
-                    src={`https://dummyimage.com/300x200/ddd/aaa&text=${encodeURIComponent(
-                      name
-                    )}`}
-                    alt={name}
-                  />
-                </div>
-                <div className="cat-name">{name}</div>
-              </div>
-            );
-          })}
-        </div>
       </section>
       {/* Featured products by category */}
       <section className="featured">
